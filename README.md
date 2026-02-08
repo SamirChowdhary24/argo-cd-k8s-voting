@@ -59,3 +59,22 @@ Fix Docker permission issue
 sudo usermod -aG docker $USER
 newgrp docker
 ```
+## ☸️ Kubernetes Cluster Setup using KIND
+Install KIND
+Script used: scripts/install_kind.sh
+
+to make .sh file executable.
+```bash
+chmod +x install_kind.sh
+./install_kind.sh
+```
+
+## Create Kubernetes Cluster
+Configuration file: kubernetes/kind-cluster-config.yaml
+
+```bash
+kind create cluster --name my-cluster --config kind-cluster-config.yaml
+```
+
+![alt text](<WhatsApp Image 2026-01-26 at 4.05.15 PM.jpeg>)
+
