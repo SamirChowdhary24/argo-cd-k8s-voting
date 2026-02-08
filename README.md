@@ -105,7 +105,7 @@ Get admin password:
 kubectl -n argocd get secret argocd-initial-admin-secret \
 -o jsonpath="{.data.password}" | base64 -d
 ```
-![alt text](<WhatsApp Image 2026-01-26 at 3.59.24 PM.jpeg>)
+![alt text](image-7.png)
 ---
 ## GitOps Application Deployment
 Create New Application in Argo CD
