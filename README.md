@@ -53,3 +53,9 @@ The project also includes **cluster visualization using Kubernetes Dashboard** a
 ```bash
 sudo apt-get update
 sudo apt-get install docker.io -y
+```
+Fix Docker permission issue
+```bash
+sudo usermod -aG docker $USER
+newgrp docker
+```
