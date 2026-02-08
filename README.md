@@ -160,3 +160,40 @@ Voting dashboard
 Result dashboard (live updates)
 ![alt text](image-5.png)
 
+---
+
+## 📊 Kubernetes Dashboard Setup
+Install Dashboard
+```bash
+kubectl apply -f \
+https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+```
+
+Create Admin User (RBAC)
+
+File: kubernetes/k8s-dashboard-admin.yaml
+
+```bash
+kubectl apply -f k8s-dashboard-admin.yaml
+kubectl -n kubernetes-dashboard create token admin-user
+``` 
+
+Access Dashboard
+```bash
+kubectl port-forward -n kubernetes-dashboard svc/kubernetes-dashboard 8444:443 --address=0.0.0.0 &
+```
+
+Access:
+https://<EC2_PUBLIC_IP>:8444
+![alt text](<WhatsApp Image 2026-01-27 at 3.14.41 PM.jpeg>)
+![alt text](<WhatsApp Image 2026-01-27 at 3.15.17 PM.jpeg>)
+![alt text](<WhatsApp Image 2026-01-27 at 3.20.23 PM.jpeg>)
+---
+
+## ✅ Final Outcome
+
+- Multi-node Kubernetes cluster running on AWS EC2
+- GitOps-based deployment using Argo CD
+- Microservices application deployed successfully
+- External access via NodePort
+- Cluster monitoring using Kubernetes Dashboard
