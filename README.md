@@ -44,7 +44,7 @@ The project also includes **cluster visualization using Kubernetes Dashboard** a
   - Kubernetes Dashboard
   - NodePort services
 
-📸 **Screenshot:** EC2 Security Group inbound rules
+![alt text](image.png)
 
 ---
 
@@ -77,4 +77,39 @@ kind create cluster --name my-cluster --config kind-cluster-config.yaml
 ```
 
 ![All Kubernetes nodes in Ready state](<WhatsApp Image 2026-01-26 at 4.05.15 PM.jpeg>)
+All Kubernetes nodes in Ready state
 
+## 🧰 Install kubectl
+
+Script used: scripts/install_kubectl.sh
+
+##  Argo CD Installation
+```bash
+kubectl create namespace argocd
+kubectl apply -n argocd -f \
+https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+Access Argo CD UI
+```bash
+kubectl port-forward -n argocd svc/argocd-server 8080:80 --address=0.0.0.0 &
+```
+Get admin password:
+```bash
+kubectl -n argocd get secret argocd-initial-admin-secret \
+-o jsonpath="{.data.password}" | base64 -d
+```
+![alt text](<WhatsApp Image 2026-01-26 at 3.59.24 PM.jpeg>)
+
+## GitOps Application Deployment
+Create New Application in Argo CD
+
+-Repository: https://github.com/LondheShubham153/k8s-kind-voting-app.git
+-Path: k8s-specifications
+-Namespace: default
+
+![alt text](<WhatsApp Image 2026-01-27 at 12.05.30 PM.jpeg>)
+-creating new application on argocd
+-path where k8s manifest file is stored
+-source code should be deployed on our cluster
+
+![alt text](image-1.png)
