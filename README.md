@@ -80,12 +80,16 @@ kind create cluster --name my-cluster --config kind-cluster-config.yaml
 ```
 
 ![All Kubernetes nodes in Ready state](<WhatsApp Image 2026-01-26 at 4.05.15 PM.jpeg>)
+
 All Kubernetes nodes in Ready state
+
 ---
 ## 🧰 Install kubectl
 
 Script used: scripts/install_kubectl.sh
+
 ---
+
 ##  Argo CD Installation
 ```bash
 kubectl create namespace argocd
