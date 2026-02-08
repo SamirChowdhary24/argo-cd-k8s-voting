@@ -56,8 +56,7 @@ sudo apt-get install docker.io -y
 ```
 Fix Docker permission issue
 ```bash
-sudo usermod -aG docker $USER
-newgrp docker
+sudo usermod -aG docker $USER && newgrp docker
 ```
 ---
 
