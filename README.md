@@ -144,9 +144,16 @@ kubectl get deployments
 ## 🌐 Service Exposure (NodePort)
 
 NodePorts assigned:
+Access voting app UI
+```bash
+kubectl port-forward svc/vote 5000:5000 --address=0.0.0.0 &
+```
 
+```bash
+kubectl port-forward svc/vote 5000:5000 --address=0.0.0.0 &
+
+```
 Vote App → 5000
-
 Result App → 5001
 
 Access URLs:
