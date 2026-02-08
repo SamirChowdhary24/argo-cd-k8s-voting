@@ -76,5 +76,5 @@ Configuration file: kubernetes/kind-cluster-config.yaml
 kind create cluster --name my-cluster --config kind-cluster-config.yaml
 ```
 
-![alt text](<WhatsApp Image 2026-01-26 at 4.05.15 PM.jpeg>)
+![All Kubernetes nodes in Ready state](<WhatsApp Image 2026-01-26 at 4.05.15 PM.jpeg>)
 
