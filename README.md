@@ -165,7 +165,7 @@ http://<EC2_PUBLIC_IP>:5001
 Voting dashboard
 ![alt text](image-4.png)
 Result dashboard (live updates)
-![alt text](image-5.png)
+![alt text](image-6.png)
 
 ---
 
