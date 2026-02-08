@@ -59,6 +59,8 @@ Fix Docker permission issue
 sudo usermod -aG docker $USER
 newgrp docker
 ```
+---
+
 ## ☸️ Kubernetes Cluster Setup using KIND
 Install KIND
 Script used: scripts/install_kind.sh
@@ -68,6 +70,7 @@ to make .sh file executable.
 chmod +x install_kind.sh
 ./install_kind.sh
 ```
+---
 
 ## Create Kubernetes Cluster
 Configuration file: kubernetes/kind-cluster-config.yaml
@@ -78,11 +81,11 @@ kind create cluster --name my-cluster --config kind-cluster-config.yaml
 
 ![All Kubernetes nodes in Ready state](<WhatsApp Image 2026-01-26 at 4.05.15 PM.jpeg>)
 All Kubernetes nodes in Ready state
-
+---
 ## 🧰 Install kubectl
 
 Script used: scripts/install_kubectl.sh
-
+---
 ##  Argo CD Installation
 ```bash
 kubectl create namespace argocd
@@ -99,7 +102,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret \
 -o jsonpath="{.data.password}" | base64 -d
 ```
 ![alt text](<WhatsApp Image 2026-01-26 at 3.59.24 PM.jpeg>)
-
+---
 ## GitOps Application Deployment
 Create New Application in Argo CD
 
@@ -113,3 +116,43 @@ Create New Application in Argo CD
 - source code should be deployed on our cluster
 
 ![alt text](image-1.png)
+---
+## Sync Application
+
+Click SYNC in Argo CD UI.
+
+This deploys:
+- vote
+- result
+- worker
+- redis
+- postgres
+
+![alt text](image-2.png)
+
+### Verify Kubernetes Resources
+```bash
+kubectl get pods
+kubectl get deployments
+```
+![alt text](image-3.png)
+---
+## 🌐 Service Exposure (NodePort)
+
+NodePorts assigned:
+
+Vote App → 5000
+
+Result App → 5001
+
+Access URLs:
+
+http://<EC2_PUBLIC_IP>:5000
+http://<EC2_PUBLIC_IP>:5001
+
+
+Voting dashboard
+![alt text](image-4.png)
+Result dashboard (live updates)
+![alt text](image-5.png)
+
