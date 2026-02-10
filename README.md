@@ -2,12 +2,8 @@
 # GitOps-Based Kubernetes Deployment with Argo CD on AWS EC2
 
 ## 📌 Project Overview
-This project demonstrates an **end-to-end GitOps workflow** where a microservices-based application is deployed and managed on a Kubernetes cluster using **Argo CD**.  
-The Kubernetes cluster is created using **KIND (Kubernetes IN Docker)** and hosted on an **AWS EC2 instance**.  
-The project also includes **cluster visualization using Kubernetes Dashboard** and external access to services using **NodePort**.
 
-## 🚀 Quick Summary
-This project demonstrates a complete GitOps-based deployment workflow using Argo CD on a Kubernetes cluster hosted on AWS EC2. A multi-node KIND cluster is used to deploy a microservices voting application, with external access via NodePort and real-time monitoring using Kubernetes Dashboard.
+This project demonstrates an end-to-end application deployment workflow using **Argo CD** on a Kubernetes cluster hosted on **AWS EC2**. A multi-node Kubernetes cluster is created using **KIND (Kubernetes in Docker)** to deploy a microservices-based voting application. The project also includes real-time **cluster monitoring using Kubernetes Dashboard** and external service access for application interaction.
 
 ---
 
@@ -143,9 +139,10 @@ kubectl get deployments
 ```
 ![alt text](image-3.png)
 ---
-## 🌐 Service Exposure (NodePort)
+## 🌐 Service Access
 
-NodePorts assigned:
+Services are accessed externally using `kubectl port-forward` for demonstration purposes.
+
 Access the Voting Application UI
 ```bash
 kubectl port-forward svc/vote 5000:5000 --address=0.0.0.0 &
@@ -194,9 +191,10 @@ https://<EC2_PUBLIC_IP>:8444
 
 ## ✅ Final Outcome
 
-- Multi-node Kubernetes cluster running on AWS EC2
-- GitOps-based deployment using Argo CD
-- Microservices application deployed successfully
-- External access via NodePort
+- Multi-node Kubernetes cluster running on AWS EC2  
+- Automated application deployment using Argo CD  
+- Successfully deployed a microservices-based application  
+- Enabled external access to services using NodePort  
+- Implemented cluster monitoring using Kubernetes Dashboard  
 
-- Cluster monitoring using Kubernetes Dashboard
+
