@@ -112,7 +112,7 @@ Create New Application in Argo CD
 - Path: k8s-specifications
 - Namespace: default
 - creating new application on argocd
-- path where Kubernetes manifests (YAML files) is stored
+- path where Kubernetes manifests (YAML files) is stored <https://github.com/LondheShubham153/k8s-kind-voting-app/tree/main/k8s-specifications>
 - source code should be deployed on our cluster
 ![alt text](<WhatsApp Image 2026-01-27 at 12.05.30 PM.jpeg>)
 
@@ -195,6 +195,7 @@ https://<EC2_PUBLIC_IP>:8444
 - Successfully deployed a microservices-based application  
 - Enabled external access to services using NodePort  
 - Implemented cluster monitoring using Kubernetes Dashboard  
+
 
 
 
