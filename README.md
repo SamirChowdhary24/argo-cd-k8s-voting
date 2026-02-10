@@ -111,11 +111,10 @@ Create New Application in Argo CD
 - Repository: https://github.com/LondheShubham153/k8s-kind-voting-app.git
 - Path: k8s-specifications
 - Namespace: default
-
-![alt text](<WhatsApp Image 2026-01-27 at 12.05.30 PM.jpeg>)
 - creating new application on argocd
-- path where k8s manifest file is stored
+- path where Kubernetes manifests (YAML files) is stored
 - source code should be deployed on our cluster
+![alt text](<WhatsApp Image 2026-01-27 at 12.05.30 PM.jpeg>)
 
 ![alt text](image-1.png)
 ---
@@ -196,5 +195,6 @@ https://<EC2_PUBLIC_IP>:8444
 - Successfully deployed a microservices-based application  
 - Enabled external access to services using NodePort  
 - Implemented cluster monitoring using Kubernetes Dashboard  
+
 
 
