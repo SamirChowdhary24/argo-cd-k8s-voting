@@ -6,6 +6,9 @@ This project demonstrates an **end-to-end GitOps workflow** where a microservice
 The Kubernetes cluster is created using **KIND (Kubernetes IN Docker)** and hosted on an **AWS EC2 instance**.  
 The project also includes **cluster visualization using Kubernetes Dashboard** and external access to services using **NodePort**.
 
+## 🚀 Quick Summary
+This project demonstrates a complete GitOps-based deployment workflow using Argo CD on a Kubernetes cluster hosted on AWS EC2. A multi-node KIND cluster is used to deploy a microservices voting application, with external access via NodePort and real-time monitoring using Kubernetes Dashboard.
+
 ---
 
 ## 🛠 Tools & Technologies Used
@@ -64,7 +67,7 @@ sudo usermod -aG docker $USER && newgrp docker
 Install KIND
 Script used: scripts/install_kind.sh
 
-to make .sh file executable.
+to make the script executable and run it:
 ```bash
 chmod +x install_kind.sh
 ./install_kind.sh
@@ -143,23 +146,16 @@ kubectl get deployments
 ## 🌐 Service Exposure (NodePort)
 
 NodePorts assigned:
-Access voting app UI
+Access the Voting Application UI
 ```bash
 kubectl port-forward svc/vote 5000:5000 --address=0.0.0.0 &
 ```
 
 ```bash
-kubectl port-forward svc/vote 5000:5000 --address=0.0.0.0 &
-
+kubectl port-forward svc/result 5001:80 --address=0.0.0.0 &
 ```
-Vote App → 5000
-Result App → 5001
-
-Access URLs:
-
-http://<EC2_PUBLIC_IP>:5000
-http://<EC2_PUBLIC_IP>:5001
-
+Vote App → http://<EC2_PUBLIC_IP>:5000
+Result App → http://<EC2_PUBLIC_IP>:5001
 
 Voting dashboard
 ![alt text](image-4.png)
@@ -202,4 +198,5 @@ https://<EC2_PUBLIC_IP>:8444
 - GitOps-based deployment using Argo CD
 - Microservices application deployed successfully
 - External access via NodePort
+
 - Cluster monitoring using Kubernetes Dashboard
