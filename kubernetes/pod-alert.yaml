@@ -1,0 +1,19 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: pod-down-alert
+  namespace: monitoring
+  labels:
+    release: kind-prometheus
+spec:
+  groups:
+  - name: pod-alerts
+    rules:
+    - alert: PrometheusTargetDown
+      expr: up == 0
+      for: 30s
+      labels:
+        severity: critical
+      annotations:
+        summary: "A monitored target is down"
+        description: "Prometheus detected a target that is not responding."
