@@ -47,7 +47,7 @@ This project demonstrates an end-to-end application deployment workflow using **
   - Kubernetes Dashboard
   - NodePort services
 
-![alt text](image.png)
+![alt text](screenshots/image.png)
 
 ---
 
@@ -81,7 +81,7 @@ Configuration file: kubernetes/kind-cluster-config.yaml
 kind create cluster --name my-cluster --config kind-cluster-config.yaml
 ```
 
-![All Kubernetes nodes in Ready state](<WhatsApp Image 2026-01-26 at 4.05.15 PM.jpeg>)
+![All Kubernetes nodes in Ready state](screenshots/WhatsApp%20Image%202026-01-26%20at%204.05.15%20PM.jpeg)
 
 All Kubernetes nodes in Ready state
 
@@ -107,7 +107,7 @@ Get admin password:
 kubectl -n argocd get secret argocd-initial-admin-secret \
 -o jsonpath="{.data.password}" | base64 -d
 ```
-![alt text](image-7.png)
+![alt text](screenshots/image-7.png)
 ---
 ## GitOps Application Deployment
 Create New Application in Argo CD
@@ -120,7 +120,7 @@ Create New Application in Argo CD
 - The Kubernetes manifests stored in the repository are automatically deployed to the cluster using Argo CD.
 ![alt text](<WhatsApp Image 2026-01-27 at 12.05.30 PM.jpeg>)
 
-![alt text](image-1.png)
+![alt text](screenshots/image-1.png)
 ---
 ## Sync Application
 
@@ -133,14 +133,14 @@ This deploys:
 - redis
 - postgres
 
-![alt text](image-2.png)
+![alt text](screenshots/image-2.png)
 
 ### Verify Kubernetes Resources
 ```bash
 kubectl get pods
 kubectl get deployments
 ```
-![alt text](image-3.png)
+![alt text](screenshots/image-3.png)
 ---
 ## 🌐 Service Access
 
@@ -158,9 +158,9 @@ Vote App → http://<EC2_PUBLIC_IP>:5000
 Result App → http://<EC2_PUBLIC_IP>:5001
 
 Voting dashboard
-![alt text](image-4.png)
+![alt text](screenshots/image-4.png)
 Result dashboard (live updates)
-![alt text](image-6.png)
+![alt text](screenshots/image-6.png)
 
 ---
 
@@ -257,7 +257,7 @@ expr: up == 0
 - This rule triggers an alert when a monitored target becomes unavailable.
 - When the condition is met, the alert enters a **FIRING** state in Prometheus.
 
-![alt text](image-8.png)
+![alt text](screenshots/image-8.png)
 #### The full alert configuration can be found in:
 #### kubernetes/pod-alert.yaml
 
