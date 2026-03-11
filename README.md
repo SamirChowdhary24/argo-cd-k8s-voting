@@ -118,7 +118,7 @@ Create New Application in Argo CD
 - creating new application on argocd
 - path where Kubernetes manifests (YAML files) is stored <https://github.com/LondheShubham153/k8s-kind-voting-app/tree/main/k8s-specifications>
 - The Kubernetes manifests stored in the repository are automatically deployed to the cluster using Argo CD.
-![alt text](<WhatsApp Image 2026-01-27 at 12.05.30 PM.jpeg>)
+![alt text](screenshots/WhatsApp%20Image%202026-01-27%20at%2012.05.30%20PM.jpeg)
 
 ![alt text](screenshots/image-1.png)
 ---
@@ -187,9 +187,9 @@ kubectl port-forward -n kubernetes-dashboard svc/kubernetes-dashboard 8444:443 -
 
 Access:
 https://<EC2_PUBLIC_IP>:8444
-![alt text](<WhatsApp Image 2026-01-27 at 3.14.41 PM.jpeg>)
-![alt text](<WhatsApp Image 2026-01-27 at 3.15.17 PM.jpeg>)
-![alt text](<WhatsApp Image 2026-01-27 at 3.20.23 PM.jpeg>)
+![alt text](screenshots/WhatsApp%20Image%202026-01-27%20at%203.14.41%20PM.jpeg)
+![alt text](screenshots/WhatsApp%20Image%202026-01-27%20at%203.15.17%20PM.jpeg)
+![alt text](screenshots/WhatsApp%20Image%202026-01-27%20at%203.20.23%20PM.jpeg)
 ---
 
 ## 📈 Monitoring with Prometheus and Grafana
@@ -228,7 +228,7 @@ This installs the following monitoring components:
 
 Grafana provides pre-configured dashboards to visualize Kubernetes cluster metrics such as CPU usage, memory usage, and pod performance.
 
-![alt text](<WhatsApp Image 2026-03-10 at 6.12.44 PM.jpeg>)
+![alt text](screenshots/WhatsApp%20Image%202026-03-10%20at%206.12.44%20PM.jpeg)
 
 Access Grafana using port forwarding:
 ```bash
